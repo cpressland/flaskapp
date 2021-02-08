@@ -1,0 +1,26 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: flaskapp
+  labels: &labels
+    app: flaskapp
+spec:
+  selector:
+    matchLabels: *labels
+  template:
+    metadata:
+      labels: *labels
+    spec:
+      containers:
+      - name: flaskapp
+        image: docker.io/cpressland/flaskapp:latest
+        ports:
+        - containerPort: 5000
+        resources:
+          limits:
+            cpu: 2000m
+            memory: 512Mi
+          requests:
+            cpu: 100m
+            memory: 128Mi
