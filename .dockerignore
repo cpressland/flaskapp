@@ -1,0 +1,7 @@
+# comment
+__pycache__
+.git
+.gitignore
+Dockerfile
+Pipfile
+Pipfile.lock
